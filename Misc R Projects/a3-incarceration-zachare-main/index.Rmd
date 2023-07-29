@@ -1,0 +1,53 @@
+---
+title: "Incarceration Visualizations"
+author: "Zachary Grieser"
+date: "2/19/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+source("analysis.R")
+```
+
+## Data Description
+
+- [Click here](https://github.com/vera-institute/incarceration-trends#data) for the source of the data.
+- The size of this data set is `r data_description[[1]]`.
+- The range of years the data set covers is `r data_description[[2]]`.
+- The total number of people incarcerated in the most recent year `r data_description[[3]]` of the data set is `r data_description[[4]] + data_description[[5]]`.
+- This data is relatively recent considering the range. However, it will not display any changes due to policy in the 2016 presidential election as that is where the data mostly ends.
+
+## Incarceration Trends Over Time
+
+```{r trends_plot, echo = FALSE}
+plot(incarceration_over_time_plot)
+```
+
+- I noticed that the trends of incarcerated black people are proportionally very high in the graph. Also all incarceration rates are growing over time.
+
+## Highest Black Incarceration Rates
+
+```{r top_10_states_plot, echo = FALSE}
+plot(top_10_black_incarceration_plot)
+```
+
+- Rates of incarceration of proportionally very high compared to the total population especially in states such as Wisconsin and Oklahoma. Data that is missing is things like sentence time, arrest rates, and policing for the respective categories.
+
+## Racial Incarceration Discrepancy Map
+
+```{r racial_incarceration_plot, echo = FALSE}
+plot(racial_discrepancy_map)
+```
+
+- There is a major outlier in the ratio data in Lincoln County. This could be because it is the fifth least populous county in the state.
+
+## Imprisonment between Men and Women by County Size
+
+```{r men_women_imprisonment_plot, echo = FALSE}
+plot(prisoner_to_area_plot)
+```
+
+- What is the correlation between the amount of people imprisoned based on sex and type of county?
+- It was very obvious when scaling the plot that there is much more men imprisoned than women overall. It also showed that there is a slight correlation with county type too. The urban lines are flatter than the small/mid lines. This means men are imprisoned at a higher ratio than women in more urban environments.
+- I selected this layout because it shows the ratio of men and women while simultaneously showing the county type. This method is effective as it uses very easy to see traits like flatness of lines and color.
+- This plot is effective and expressive as it shows the ratio close enough to see the numbers of the observations but also far enough to see the general trend. It also combines traits that can be seen together without interfering like color and position. 
